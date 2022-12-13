@@ -1,6 +1,7 @@
 //Add new lift
 
 const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
+
     for(let i = 1;i<numOfLifts;i++){
         const newLift = document.createElement("div");
         newLift.setAttribute("class","lift");
@@ -20,7 +21,7 @@ const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
         const plan = document.getElementById("plan");
         plan.appendChild(newFloor);
     }
-	
+
 	for(let z = 1;z<=numOfFloors;z++){
 		const buttonLayout = document.createElement("div");
         buttonLayout.setAttribute("class","btns");
@@ -48,6 +49,6 @@ const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
 	}
 };
 
-addLift(3,2);
+addLift(5,5);
 
 

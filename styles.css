@@ -5,6 +5,12 @@
   margin-left: 80px;
   position: relative;
   top: 0px;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: -150px;}
 }
 
 .sys {
