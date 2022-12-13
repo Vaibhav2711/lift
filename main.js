@@ -1,6 +1,6 @@
 //Add new lift
 
-const addLift = (numOfLifts) =>{
+const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
     for(let i = 1;i<numOfLifts;i++){
         const newLift = document.createElement("div");
         newLift.setAttribute("class","lift");
@@ -9,35 +9,47 @@ const addLift = (numOfLifts) =>{
         //console.log(box);
         box.appendChild(newLift);
     }
+
+    for(let j = 1;j<numOfFloors;j++){
+        const newFloor = document.createElement("div");
+        newFloor.setAttribute("class","floor");
+        let spacing = 150*j;
+        let floorSpacing = "-"+spacing.toString()+"px";
+        console.log(floorSpacing);
+        newFloor.style.top = floorSpacing;
+        const plan = document.getElementById("plan");
+        plan.appendChild(newFloor);
+        const buttonLayout = document.createElement("div");
+        buttonLayout.setAttribute("class","btns");
+        const levelNo = document.createElement("div");
+        levelNo.setAttribute("class","level");
+        levelNo.innerHTML = "Floor "+j.toString();
+        const upButton = document.createElement("button");
+        upButton.setAttribute("class","up");
+        const downButton = document.createElement("button");
+        downButton.setAttribute("class","down");
+        buttonLayout.appendChild(levelNo);
+        buttonLayout.appendChild(upButton);
+        buttonLayout.appendChild(downButton);
+        let buttonSpacing = 450-(100*(j-1));
+        let layoutSpacing = buttonSpacing.toString()+"px";
+        buttonLayout.style.top = layoutSpacing;
+        const plan1 = document.getElementById("floorLevel");
+        //console.lo
+        //plan1.appendChild(newFloor);
+        plan1.insertBefore(buttonLayout,plan1.children[0]);
+    }
     
 }
 
+addLift(5,4);
+
 
 //Add new floor
-const newFloor = document.createElement("div");
-newFloor.setAttribute("class","floor");
-newFloor.style.top = "-150px";
-const plan = document.getElementById("plan");
-plan.appendChild(newFloor);
+
 
 //Add button
-const buttonLayout = document.createElement("div");
-buttonLayout.setAttribute("class","btns");
-const levelNo = document.createElement("div");
-levelNo.setAttribute("class","level");
-levelNo.innerHTML = "Floor 2";
-const upButton = document.createElement("button");
-upButton.setAttribute("class","up");
-const downButton = document.createElement("button");
-downButton.setAttribute("class","down");
-buttonLayout.appendChild(levelNo);
-buttonLayout.appendChild(upButton);
-buttonLayout.appendChild(downButton);
-buttonLayout.style.top = "420px";
-const plan1 = document.getElementById("floorLevel");
-//console.lo
-//plan1.appendChild(newFloor);
-plan1.insertBefore(buttonLayout,plan1.children[0]);
+
 
 //newfloor
 const newFloor1 = document.createElement("div");
