@@ -5,13 +5,10 @@
   margin-left: 80px;
   position: relative;
   top: 0px;
-  animation: mymove 5s infinite;
+  transition: top ease-in-out;
 }
 
-@keyframes mymove {
-  from {top: 0px;}
-  to {top: -150px;}
-}
+
 
 .sys {
   display: flex;

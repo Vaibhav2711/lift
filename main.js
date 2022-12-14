@@ -1,14 +1,24 @@
 //Add new lift
 
-const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
+const lifts = [];
+const floors = [];
+const buttons = [];
 
-    for(let i = 1;i<numOfLifts;i++){
+const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
+	
+	
+	
+	//buttons[0] = document.getElementById("btnSet");
+	//lifts[0] = document.getElementById("set");
+
+    for(let i = 0;i<numOfLifts;i++){
         const newLift = document.createElement("div");
         newLift.setAttribute("class","lift");
         //console.log(newLift);
         const box = document.getElementById("set");
         //console.log(box);
         box.appendChild(newLift);
+		lifts[i] = newLift;
     }
 
     for(let j = 1;j<=numOfFloors;j++){
@@ -20,14 +30,15 @@ const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
         newFloor.style.top = floorSpacing;
         const plan = document.getElementById("plan");
         plan.appendChild(newFloor);
+		floors[j-1] = newFloor;
     }
 
-	for(let z = 1;z<=numOfFloors;z++){
+	for(let z = 0;z<=numOfFloors;z++){
 		const buttonLayout = document.createElement("div");
         buttonLayout.setAttribute("class","btns");
         const levelNo = document.createElement("div");
         levelNo.setAttribute("class","level");
-		console.log(z);
+		//console.log(z);
         levelNo.innerHTML = "Floor "+(z).toString();
         const upButton = document.createElement("button");
         upButton.setAttribute("class","up");
@@ -42,13 +53,23 @@ const addLift = (numOfLifts = 2,numOfFloors = 3) =>{
         let layoutSpacing = buttonSpacing.toString()+"px";
 		console.log(layoutSpacing);
         buttonLayout.style.top = layoutSpacing;
+		buttons[z] = buttonLayout;
         const plan1 = document.getElementById("floorLevel");
         //console.lo
         //plan1.appendChild(newFloor);
         plan1.insertBefore(buttonLayout,plan1.children[0]);
 	}
+	console.log(lifts);
+	console.log(floors);
+	console.log(buttons);
 };
 
-addLift(5,5);
+addLift(2,3);
 
+document.querySelector(".up").addEventListener("click",function(){
+	//const lift = lifts[0];
+	lifts[0].style.transitionDuration = "2s";
+	lifts[0].style.top = "-290px"; 
+	//console.log(lifts[1].style.animationPlayState);
+});
 
