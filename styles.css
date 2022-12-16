@@ -1,13 +1,42 @@
 .lift {
   width: 50px;
   height: 100px;
-  background-color: #555;
+  background-color: gray;
   margin-left: 80px;
   position: relative;
   top: 0px;
   transition: top ease-in-out;
+  display: flex;
+  flex-direction: row;
+  
 }
 
+.left{
+  width: 25px;
+  height: 100px;
+  background-color: black;
+  border: 1px solid white;
+  /*height: 100px;
+  background-color: black;
+  
+  position: relative;
+  left: 80px;
+  transition: left ease-in-out;*/
+}
+
+.right{
+  width: 25px;
+  height: 100px;
+  background-color: black;
+  border: 1px solid white;
+  /*margin-left: 105px;
+  /*height: 100px;
+  
+  
+  position: relative;
+  left: 105px;
+  transition: left ease-in-out;*/
+}
 
 
 .sys {
